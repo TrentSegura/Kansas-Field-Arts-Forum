@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;700&family=Inter:wght@200;400;700&display=swap");
+
+/* font-family: 'IBM Plex Mono', monospace; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #161616;
+  color: #fff;
+}
+
+html,
+body {
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background-color: #161616;
+  color: #dedede;
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  color: #161616;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1px solid #161616;
+}
+
+p a {
+  display: inline;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vw;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 12vw;
+  line-height: 1;
+}
+
+.header h2 {
+  text-transform: uppercase;
+  font-size: 6vw;
+  font-weight: 700;
+}
+
+.header h1,
+.header h2 {
+  color: #fff;
+  text-shadow: 1px 1px 15px rgb(67, 67, 67);
+  opacity: 0.95;
+}
+
+.container {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: masonry;
+  gap: 10px;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.5s;
+
+  font-family: "IBM Plex Mono", monospace;
+  line-height: 1.4;
+  padding: 20px;
+}
+
+.post:hover .overlay {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.apply {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  z-index: 10;
+}
+
+.apply-info {
+  margin-top: 2em;
+}
+
+.apply-info a:active,
+.apply a:active {
+  transform: scale(0.9);
+}
+
+a.button {
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: rgb(20, 20, 20);
+  background: linear-gradient(180deg, rgb(31, 31, 31) 0%, rgb(14, 14, 14) 100%);
+  border-radius: 5px;
+  border: 1px solid #000;
+  cursor: pointer;
+  color: #fff;
+}
+
+a:hover.button {
+  background: rgb(43, 43, 43);
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  padding: 10vw;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 11;
+  color: #161616;
+  line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+  section {
+    padding: 40px 20px 20px 20px;
+  }
+
+  .header {
+    padding-left: 20px;
+  }
+
+  .header h1 {
+    font-size: 15vw;
+  }
+}
+
+.info-container {
+  max-width: 76ch;
+  z-index: 1000;
+}
+
+section p,
+section li {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+ul li {
+  list-style-type: circle;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+ul {
+  margin-left: 1em;
+  margin-bottom: 3em;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+footer {
+  display: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  color: #888888;
+  font-size: 1em;
+}
+
+footer a {
+  color: #888888;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-container {
+  margin-left: 10vw;
+  padding-bottom: 5px;
+}
+
+.section-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+
+.caic-nea-logo,
+.pratt-logo {
+  opacity: 0.7;
+  width: 225px;
+  margin-top: 1em;
+}
+
+@media (max-width: 500px) {
+  .logo-container {
+    margin-top: 3em;
+    align-items: center;
+  }
+  .caic-nea-logo,
+  .pratt-logo {
+    margin: 1em 0;
+    width: 80%;
+  }
+  .apply-info {
+    width: 100%;
+  }
+
+  .apply-info a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-container {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .section-footer {
+    flex-direction: column;
+    align-items: left !important;
+  }
+}
+
+#post-011,
+#post-012,
+#post-020 {
+  grid-row: span 2;
+}
